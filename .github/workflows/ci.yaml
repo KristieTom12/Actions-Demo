@@ -3,8 +3,10 @@ name: My Flaky Test
 # on actions run the following jobs
 on:
   # TODO 1: specify a branch
-  push:
+  pull_request:
     branches: [main]
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   # run the flaky test job
@@ -27,5 +29,12 @@ jobs:
       # TODO 2 fill in the step
       run: |
         for var in {1..20}; do pytest; done
+  linkinator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JustinBeckwith/linkinator-action@v1
+        with:
+          paths: README.md
 
 

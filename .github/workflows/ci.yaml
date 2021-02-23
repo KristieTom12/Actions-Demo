@@ -4,7 +4,7 @@ name: My Flaky Test
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/1 * * * *'
+    - cron:  '*/5 * * * *'
 
 jobs:
   # run the flaky test job

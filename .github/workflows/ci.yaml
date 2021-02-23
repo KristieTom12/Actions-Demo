@@ -6,7 +6,7 @@ on:
 
   # TODO 3: specify a cron schedule
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/1 * * * *'
 
 jobs:
   # run the flaky test job
